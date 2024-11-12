@@ -34,7 +34,7 @@ switches:
 engine:
   processors:
     - lua_processor@*select_char
-    - lua_processor@*pair_symbols
+    # - lua_processor@*pair_symbols  适配的macos,window上左移有问题,并且有些工具如：vscode会自动补全,这里的补全符号对,自动补全反而导致问题
     - lua_processor@*smart_commit_cand
     - lua_processor@*idiom_abbr_expand
     - lua_processor@*easy_en*processor
