@@ -268,10 +268,10 @@ punctuator:
   full_shape:
     __include: default:/punctuator/full_shape         # 从 default.yaml 导入配置
   half_shape:
-    # __include: default:/punctuator/half_shape       # 从 default.yaml 导入配置
-    ",": {commit: "，"}
-    ".": {commit: "。"}
-    ";": {commit: "；"}
+    __include: default:/punctuator/half_shape       # 从 default.yaml 导入配置，然后覆盖部分配置
+    # ",": {commit: "，"}
+    # ".": {commit: "。"}
+    # ";": {commit: "；"}
     "<": ["<", 《, 〈, «, ⟨, ˂, ˱]
     ">": [">", 》, 〉, », ⟩, ˃, ˲]
     "/": ["/", ／, ÷]
@@ -303,7 +303,7 @@ key_binder:
     - {when: always, accept: "Control+period", toggle: full_shape} # Control+.  半角全角轉換開關  
     # - {when: always, accept: "Control+slash", toggle: traditionalize}  
     - {when: always, accept: "Control+Shift+semicolon", select: easy_en} # Control+;  英文  
-    
+
 # 拼写设定
 speller:
   # 如果不想让什么标点直接上屏, 可以加在 alphabet, 或者编辑标点符号为两个及以上的映射
